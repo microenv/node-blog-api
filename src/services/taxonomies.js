@@ -10,5 +10,17 @@ broker.createService({
   version: 1,
   mixins: [DbService],
   adapter: dbadapter,
-  model: Taxonomy
+  model: Taxonomy,
+  actions: {
+    async listCategories() {
+      let taxs = await this.adapter.find({ type: 'category' })
+      let response = { rows: taxs }
+      return response
+    },
+    async listTags() {
+      let taxs = await this.adapter.find({ type: 'tag' })
+      let response = { rows: taxs }
+      return response
+    }
+  }
 })

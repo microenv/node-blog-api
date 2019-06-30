@@ -11,21 +11,21 @@ broker.createService({
       aliases: {
         // public routes
 
-        'GET posts': 'posts.list',
-        'GET posts/:id': 'posts.findOne',
-        'GET categories': 'taxonomies.listCategories',
-        'GET tags': 'taxonomies.listTags',
-        'GET taxonomies': 'taxonomies.list',
+        'GET posts': 'v1.posts.list',
+        // 'GET posts/:id': 'v1.posts.findOne',
+        'GET categories': 'v1.taxonomies.listCategories',
+        'GET tags': 'v1.taxonomies.listTags',
+        'GET taxonomies': 'v1.taxonomies.list',
 
         // protected routes
 
-        'POST posts': 'posts.create',
-        'PUT posts/:id': 'posts.updateOne',
-        'DELETE posts/:id': 'posts.deleteOne',
+        // 'POST posts': 'v1.posts.create',
+        // 'PUT posts/:id': 'v1.posts.updateOne',
+        // 'DELETE posts/:id': 'v1.posts.deleteOne',
 
-        'POST taxonomies': 'taxonomies.create',
-        'PUT taxonomies/:id': 'taxonomies.updateOne',
-        'DELETE taxonomies/:id': 'taxonomies.deleteOne'
+        // 'POST taxonomies': 'v1.taxonomies.create',
+        // 'PUT taxonomies/:id': 'v1.taxonomies.updateOne',
+        // 'DELETE taxonomies/:id': 'v1.taxonomies.deleteOne'
       }
     }]
   }
