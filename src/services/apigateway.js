@@ -6,7 +6,7 @@ const broker = require('../broker')
 broker.createService({
   mixins: [ApiService],
   settings: {
-    port: process.env.PORT || 3005,
+    port: process.env.PORT || 3000,
     routes: [{
       aliases: {
         // public routes

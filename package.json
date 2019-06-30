@@ -7,6 +7,8 @@
   "author": "Giovanne <giovanneafonso@gmail.com>",
   "license": "AGPL-3.0-or-later",
   "scripts": {
+    "serve": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "lint": "standard --fix"
   },
   "dependencies": {

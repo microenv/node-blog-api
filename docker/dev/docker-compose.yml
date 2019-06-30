@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  
+  dev:
+    build: ../..
+    ports:
+      - "3000:3000"
+    networks:
+      - blog
+    # env_file: env
+    environment:
+      PORT: 3000
+      MONGO_URI: mongodb://mongo/node-blog-api
+    
+    working_dir: /app
+    volumes:
+      - ../../src:/app/src
+    
+    command: yarn run dev
+
+    depends_on:
+      - mongo
+  
+  mongo:
+    image: mongo
+    # volumes:
+    #   - ../../db:/data/db
+    networks:
+      - blog
+
+networks:
+  blog:
