@@ -1,0 +1,19 @@
+{
+  "name": "node-blog-api",
+  "version": "0.0.1",
+  "description": "Blog REST API to serve blog posts as json",
+  "main": "index.js",
+  "repository": "https://github.com/microenv/node-blog-api.git",
+  "author": "Giovanne <giovanneafonso@gmail.com>",
+  "license": "GNU GPL",
+  "scripts": {
+    "lint": "standard --fix"
+  },
+  "dependencies": {
+    "moleculer": "^0.13.9",
+    "moleculer-web": "^0.8.5"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1"
+  }
+}
