@@ -2,16 +2,19 @@
   "name": "node-blog-api",
   "version": "0.0.1",
   "description": "Blog REST API to serve blog posts as json",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "https://github.com/microenv/node-blog-api.git",
   "author": "Giovanne <giovanneafonso@gmail.com>",
-  "license": "GNU GPL",
+  "license": "AGPL-3.0-or-later",
   "scripts": {
     "lint": "standard --fix"
   },
   "dependencies": {
     "moleculer": "^0.13.9",
-    "moleculer-web": "^0.8.5"
+    "moleculer-db": "^0.7.9",
+    "moleculer-db-adapter-mongoose": "^0.7.2",
+    "moleculer-web": "^0.8.5",
+    "mongoose": "^5.6.2"
   },
   "devDependencies": {
     "standard": "^12.0.1"

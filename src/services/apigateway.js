@@ -1,19 +1,20 @@
-let { ServiceBroker } = require('moleculer')
-let ApiService = require('moleculer-web')
+'use strict'
 
-let broker = new ServiceBroker({ logger: console })
+const ApiService = require('moleculer-web')
+const broker = require('../broker')
 
 broker.createService({
   mixins: [ApiService],
   settings: {
+    port: process.env.PORT || 3005,
     routes: [{
       aliases: {
         // public routes
 
         'GET posts': 'posts.list',
         'GET posts/:id': 'posts.findOne',
-        'GET categories': 'categories.list',
-        'GET tags': 'tags.list',
+        'GET categories': 'taxonomies.listCategories',
+        'GET tags': 'taxonomies.listTags',
         'GET taxonomies': 'taxonomies.list',
 
         // protected routes
