@@ -12,12 +12,12 @@ broker.createService({
   adapter: dbadapter,
   model: Taxonomy,
   actions: {
-    async listCategories() {
+    async listCategories () {
       let taxs = await this.adapter.find({ type: 'category' })
       let response = { rows: taxs }
       return response
     },
-    async listTags() {
+    async listTags () {
       let taxs = await this.adapter.find({ type: 'tag' })
       let response = { rows: taxs }
       return response

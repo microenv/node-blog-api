@@ -12,7 +12,7 @@ broker.createService({
   adapter: dbadapter,
   model: Post,
   methods: {
-    async seedDB() {
+    async seedDB () {
       this.logger.info('Seed posts collection...')
 
       await this.adapter.insert({
@@ -24,9 +24,9 @@ broker.createService({
       })
     }
   },
-  afterConnected() {
+  afterConnected () {
     return this.adapter.count().then(async count => {
-      if(count === 0) {
+      if (count === 0) {
         await this.seedDB()
       }
     })
