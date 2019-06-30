@@ -8,6 +8,13 @@ broker.createService({
   mixins: [ApiService],
   settings: {
     port: process.env.PORT || 3000,
+
+    cors: {
+      origin: '*',
+      methods: ['GET', 'OPTIONS', 'POST', 'PUT', 'DELETE'],
+      allowedHeaders: []
+    },
+
     routes: [{
       authorization: true,
       aliases: {
