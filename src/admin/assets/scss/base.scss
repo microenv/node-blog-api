@@ -1,0 +1,24 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e7e9eb;
+  font-family: 'Roboto', sans-serif;
+}
+
+.warningBox {
+  margin-top: 50px;
+  padding: 30px 15px;
+  background: #fff;
+  box-shadow: 1px 1px 5px #999;
+
+  h3 {
+    margin-top: 0;
+  }
+}

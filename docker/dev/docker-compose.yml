@@ -6,21 +6,17 @@ services:
     build: ../..
     ports:
       - "3000:3000"
+      - "3001:3001"
     networks:
       - blog
-    # env_file: env
     environment:
       NODE_ENV: development
-      PORT: 3000
-      MONGO_URI: mongodb://mongo/node-blog-api
-      SECRET: devsecret
-    
-    working_dir: /app
+      SERVER_PORT: 3000
+      SERVER_MONGO_URI: mongodb://mongo/node-blog-api
+      SERVER_SECRET: devsecret
+      ADMIN_PORT: 3001
     volumes:
       - ../../src:/app/src
-    
-    command: yarn run dev
-
     depends_on:
       - mongo
   

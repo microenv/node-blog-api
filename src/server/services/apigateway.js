@@ -7,7 +7,7 @@ const E = ApiService.Errors
 broker.createService({
   mixins: [ApiService],
   settings: {
-    port: process.env.PORT || 3000,
+    port: process.env.SERVER_PORT || 3000,
 
     cors: {
       origin: '*',

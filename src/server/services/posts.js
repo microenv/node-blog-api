@@ -20,7 +20,7 @@ broker.createService({
         title: 'Hello World',
         excerpt: 'This post is only a demo to populate DB',
         body: '<h2>It works!</h2>\n<p>Content of the post here</p>',
-        image: 'https://placehold.it/300x300?text=Hello'
+        image: 'https://placehold.it/600x300?text=Hello'
       })
     }
   },
