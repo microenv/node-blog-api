@@ -1,6 +1,38 @@
 # Node Blog API
 A CMS that serves blog posts as JSON like a REST API.
 
+## API Endpoints
+
+More details in the docs (TODO)
+
+| URI | Description |
+| --- | --- |
+| GET /posts | List posts (with search and pagination)
+| GET /categories | List categories
+| GET /tags | List tags
+| GET /taxonomies | List taxonomies
+| POST /posts | Create post
+
+TODO: _Will be available soon_
+
+| URI | Description |
+| --- | --- |
+| PUT /posts/:id | Update post
+| DELETE /posts/:id | Delete post
+| POST /taxonomies | Create taxonomy (category, tag or custom)
+| PUT /taxonomies/:id | Update taxonomy
+| DELETE /taxonomies/:id | Delete taxonomy
+
+## CMS
+
+A ReactJS panel to manage your posts:
+
+Run the project, then visit:
+
+```
+http://localhost:3001
+```
+
 ## Setup
 
 ### Requirements
@@ -44,28 +76,6 @@ This project needs some environment variables to run properly.
 | SERVER_MONGO_URI | mongodb://localhost/database_name | Mongo database URI with database's name
 | SERVER_SECRET | devsecret | Secret token. Need to pass as authorization bearer token to post requests (_create posts, etc._)
 | ADMIN_PORT | 3001 | Port to expose CMS
-
-## API Endpoints
-
-More details in the docs (TODO)
-
-| URI | Description |
-| --- | --- |
-| GET /posts | List posts (with search and pagination)
-| GET /categories | List categories
-| GET /tags | List tags
-| GET /taxonomies | List taxonomies
-| POST /posts | Create post
-
-TODO: This urls will be available soon
-
-| URI | Description |
-| --- | --- |
-| PUT /posts/:id | Update post
-| DELETE /posts/:id | Delete post
-| POST /taxonomies | Create taxonomy (category, tag or custom)
-| PUT /taxonomies/:id | Update taxonomy
-| DELETE /taxonomies/:id | Delete taxonomy
 
 ## Authentication
 
