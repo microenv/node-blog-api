@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 import { ThemeProvider } from '@material-ui/styles'
-import { createMuiTheme, makeStyles } from '@material-ui/core/styles'
+import { createMuiTheme, makeStyles } from '@material-ui/core'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
@@ -35,6 +35,8 @@ const useStyles = makeStyles(theme => ({
 
 const App = (props) => {
   const classes = useStyles()
+  let showTopnav = props.showTopnav === undefined ? true : props.showTopnav
+  console.log('showTopnav', showTopnav)
 
   return (
     <div>
@@ -50,17 +52,19 @@ const App = (props) => {
 
       <ThemeProvider theme={theme}>
 
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" className={classes.title}>
-              News
-            </Typography>
-            <Button color="inherit">Login</Button>
-          </Toolbar>
-        </AppBar>
+        {showTopnav && (
+          <AppBar position="static">
+            <Toolbar>
+              <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h6" className={classes.title}>
+                News
+              </Typography>
+              <Button color="inherit">Login</Button>
+            </Toolbar>
+          </AppBar>
+        )}
 
         {props.children}
       </ThemeProvider>

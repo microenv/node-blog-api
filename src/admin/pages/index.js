@@ -3,8 +3,8 @@ import App from '../components/App'
 import Container from '@material-ui/core/Container'
 
 const Index = () => (
-  <App>
-    <Container className="warningBox" maxWidth='xs'>
+  <App showTopnav={false}>
+    <Container className='warningBox' maxWidth='xs'>
       <div className='warningBox-content'>
         <h3>Warning!</h3>
 

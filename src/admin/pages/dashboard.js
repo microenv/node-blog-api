@@ -7,15 +7,31 @@ class Dashboard extends React.Component {
     this.state = {}
   }
 
-  static async getInitialProps({ req }) {
-    let response = await getPosts()
-    let posts = response.data
-    return { posts }
+  static async getInitialProps ({ req }) {
+    try {
+      let response = await getPosts()
+      let posts = response.data
+      return { error: '', posts }
+    } catch (e) {
+      return { error: 'Unable to reach API', posts: [] }
+    }
   }
 
   render () {
     return (<App>
-      { JSON.stringify(this.props.posts, null, 2) }
+      {this.props.error &&
+      
+      /* Show error */
+      (
+        <div className='errorMessage'>{this.props.error}</div>
+      )
+      
+      /* List posts */
+      || 
+        
+        JSON.stringify(this.props.posts, null, 2)
+        
+      }
     </App>)
   }
 }
